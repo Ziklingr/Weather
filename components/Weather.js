@@ -12,7 +12,11 @@ export default function Weather(props) {
     const [icon, setIcon] = useState('');
 
     useEffect(() => {
-        const url= api.url + 'lat=' + props.latitude + '&lon=' + props.longitude + '&units=metric&appid=' + api.key;
+        const url= api.url +
+            'lat=' + props.latitude +
+            '&lon=' + props.longitude +
+            '&units=metric' +
+            'appid=' + api.key;
 
         fetch(url)  
             .then( res => res.json())
@@ -37,3 +41,10 @@ export default function Weather(props) {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    label: {
+        fontWeight: 'bold',
+        marginTop: 10,
+    }
+});
